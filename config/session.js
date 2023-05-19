@@ -3,14 +3,14 @@ const expressSession = require('express-session');
 
 const MongoDBStore = mongodbStore(expressSession);
 const sessionStore = new MongoDBStore({
-  uri: "mongodb://127.0.0.1:27017",
+  uri: process.env.MONGODB_URL,//"mongodb://127.0.0.1:27017",
   databaseName: "onlineshop",
   collection: "sessions",
 });
 
 function sessionOptions() {
   return {
-    secret: "blablablubberasdf",
+    secret: process.env.sessionSecret, 
     resave: false,
     saveUninitialized: false,
     store: sessionStore,

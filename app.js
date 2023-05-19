@@ -1,5 +1,9 @@
 const path = require("path");
 
+const dotenv = require("dotenv");
+dotenv.config();
+console.log(process.env);
+
 const database = require("./data/database");
 
 const express = require("express");
@@ -37,7 +41,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use(expressSession(sessionOptions()));
-app.use(cookieParser("roflxd573"));
+app.use(cookieParser(process.env.cookieParserSecret));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
