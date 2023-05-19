@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/public/styles/styles.css" />
+    <link rel="stylesheet" href="/public/styles/header.css" />
+    <link rel="stylesheet" href="/public/styles/footer.css" />
+    <title>Robin's Onlineshop</title>
+  </head>
+  <body class="flex-column">
+    <header>
+      <div id="navbar" class="flex-row">
+        <div class="flex-row">
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/index.html">Home</a>
+          </div>
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/products.html">Products</a>
+          </div>
+        </div>
+
+        <div class="flex-row">
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/login.html">Login</a>
+          </div>
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/shopping-cart.html">Shopping cart</a>
+          </div>
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <div class="cart-item-container flex-column mt-1">
+        <div class="product-container flex-row mt-3">
+          <div class="flex-center">
+            <img
+              class="product-img-large"
+              src="/public/images/black_sand.png"
+              alt="Example image"
+            />
+          </div>
+          <div class="product-information-container flex-column">
+            <div class="flex-column s-gap">
+              <div>Product Brand</div>
+              <div class="product-title">Product title</div>
+              <div>Beschreibung was passiert wenn das hier länger ist</div>
+            </div>
+            <div class="flex-column m-gap">
+              <div class="flex-end">Preis</div>
+              <div class="flex-end">
+                <button>Add to cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div id="footer" class="flex-row">
+        <div class="v-auto-margin h-10px-margin">
+          Blabla this is the footer.
+        </div>
+        <div class="v-auto-margin h-10px-margin">Some other information</div>
+      </div>
+    </footer>
+  </body>
+</html>

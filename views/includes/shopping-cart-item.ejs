@@ -1,0 +1,47 @@
+<div class="cart-item-container flex-column mt-1">
+    <div><%= pos %>.</div>
+    <a class="product-container no-border flex-row mt-3" href=<%= "/product/" + cartItem.product.id %>>
+      <div class="flex-center">
+        <img
+          class="product-img"
+          src=<%= "/images/" + cartItem.product.imageFile %>
+          alt="Example image"
+        />
+      </div>
+      <div class="product-information-container flex-column">
+        <div class="flex-column s-gap">
+          <div><%= cartItem.product.brandText %></div>
+          <div class="product-title"><%= cartItem.product.nameText %></div>
+          <div><%= cartItem.product.descriptionText %></div>
+        </div>
+        <div class="flex-end"><%= cartItem.product.price %> EUR</div>
+      </div>
+    </a>
+    <div class="flex-row flex-end m-gap m-2">
+      <div class="m-a0">
+        Amount: 
+        <input 
+          class="input-quantity-item" 
+          onchange="changeItemQuantity(event)"
+          data-position="<%= pos - 1 %>"  
+          type="number" 
+          value="<%= cartItem.quantity %>"
+          data-csrftoken="<%= locals.csrfToken %>"
+          style="width: 3rem"
+          min="1"
+        />
+      </div>
+
+      <button 
+        class="button"
+        onclick="removeCartItem(event)" 
+        data-position="<%= pos - 1 %>"
+        data-csrftoken="<%= locals.csrfToken %>"
+        >        
+        Remove
+      </button>
+      <!-- <div>Remove</div> -->
+      <div class="cart-item-total-price-container m-a0">Total price: <span><%= cartItem.totalPrice %></span> EUR</div>
+    </div>
+    <hr class="product-separator" />
+  </div>

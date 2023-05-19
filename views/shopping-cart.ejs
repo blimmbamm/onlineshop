@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head') %>
+  <script src="/scripts/cart-util.js" defer></script>
+  
+  <body class="flex-column">
+
+    <%- include('includes/loading-overlay') %>
+
+    <%- include('includes/navbar') %>
+    
+
+    <div class="main-container">
+      <% if(shoppingCart.totalNumberOfItems) { %>
+        <div class="mt-1 text-center">There are <span id="number-of-items-in-cart"><%= shoppingCart.totalNumberOfItems %></span> items in your shopping cart.</div>
+        <% for(let i = 0; i < shoppingCart.cartItems.length; i++) { %> 
+          <%- include('includes/shopping-cart-item', {
+            pos: i+1,
+            cartItem: shoppingCart.cartItems[i]
+          }) %>          
+        <% } %>
+        <div
+          class="flex-row flex-end m-gap"
+          style="margin-bottom: 1rem; margin-top: 1rem"
+        >
+          <div id="cart-total-price" style="margin: auto 0">Total: <span><%= shoppingCart.totalPrice %></span> EUR</div>
+
+          <% if(locals.isAuthenticated) { %> 
+            <form action="/place-order" method="post" id="place-order-form">
+              <input type="hidden" name="csrfToken" id="csrfToken" value="<%= locals.csrfToken %>">
+              <button class="button">
+                Order now!
+              </button>
+            </form>            
+          <% } else { %>
+            <a class="button" href="/login">Login to order!</a>
+          <% } %>
+
+        </div>        
+      <% } else { %>
+        <div class="mt-1 text-center" style="display: block;">Your shopping cart is empty.</div>
+      <% } %>      
+
+    </div>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

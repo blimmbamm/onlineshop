@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head') %>
+  <body class="flex-column">
+    <!-- <script src="/scripts/add-to-cart.js" defer></script> -->
+    <script src="/scripts/cart-util.js" defer></script>
+    <%- include('includes/navbar') %>
+    
+    <div class="main-container">
+      <div class="cart-item-container flex-column mt-1">
+        <div class="product-container flex-row mt-3">
+          <div class="flex-center">
+            <img
+              class="product-img-large"
+              src=<%= "/images/" + product.imageFile %>
+              alt="Example image"
+            />
+          </div>
+          <div class="product-information-container flex-column">
+            <div class="flex-column s-gap">
+              <div><%= product.brandText %></div>
+              <div class="product-title"><%= product.nameText %></div>
+              <div><%= product.descriptionText %></div>
+            </div>
+            <div class="flex-column m-gap">
+              <div class="flex-end"><%= product.price + " EUR" %></div>
+              <div class="flex-end">
+                <!-- <form id="add-to-cart-form"> -->
+                  <button 
+                    id="add-to-cart-btn" 
+                    class="button"
+                    onclick="addToCart(event)"
+                    data-productid="<%= product.id %>"
+                    data-csrftoken="<%= locals.csrfToken %>"
+                  >
+                    Add to cart
+                  </button>
+                <!-- </form> -->
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

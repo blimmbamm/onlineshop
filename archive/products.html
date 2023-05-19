@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+    <title>Robin's Onlineshop</title>
+  </head>
+  <body class="flex-column">
+    <header>
+      <div id="navbar" class="flex-row">
+        <div class="flex-row">
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/index.html">Home</a>
+          </div>
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/products.html">Products</a>
+          </div>
+        </div>
+
+        <div class="flex-row">
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/login">Login</a>
+          </div>
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/login">Shopping cart</a>
+          </div>
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-container flex-row">
+      <div id="sidebar">
+        <div class="sidebar-item"><a href="/category-1">Category 1</a></div>
+        <div class="sidebar-item"><a href="/category-2">Category 2</a></div>
+        <div class="sidebar-item"><a href="/category-3">Category 3</a></div>
+        <div class="sidebar-item"><a href="/category-4">Category 4</a></div>
+        <div class="sidebar-item"><a href="/category-5">Category 5</a></div>
+      </div>
+      <div class="products-container flex-column">
+        <div >
+          Products from cateogory 1. Potentially put sort options and
+        </div>
+        <div class="products-list-container flex-column m-gap mt-1">
+          <a class="product-container flex-row" href="/asd">
+            <div class="flex-center">
+              <img
+                class="product-img"
+                src="images/example-image.png"
+                alt="Example image"
+              />
+            </div>
+            <div class="product-information-container flex-column">
+              <div class="flex-column s-gap">
+                <div class="product-title">Product title</div>
+                <div>Beschreibung was passiert wenn das hier länger ist</div>
+              </div>
+              <div class="flex-end">Preis</div>
+            </div>
+          </a>
+
+          <a class="product-container flex-row" href="/asd">
+            <div class="flex-center">
+              <img
+                class="product-img"
+                src="images/example-image.png"
+                alt="Example image"
+              />
+            </div>
+            <div class="product-information-container flex-column">
+              <div class="flex-column s-gap">
+                <div class="product-title">Product title</div>
+                <div>Beschreibung was passiert wenn das hier länger ist</div>
+              </div>
+              <div class="flex-end">Preis</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div id="footer" class="flex-row">
+        <div class="v-auto-margin h-10px-margin">
+          Blabla this is the footer.
+        </div>
+        <div class="v-auto-margin h-10px-margin">Some other information</div>
+      </div>
+    </footer>
+  </body>
+</html>

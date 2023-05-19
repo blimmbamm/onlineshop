@@ -1,0 +1,33 @@
+header {
+  width: 100%;
+  height: 3rem;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: rgb(30, 167, 133);
+}
+
+#navbar {
+  /* display: flex;
+  flex-direction: row; */
+  width: 900px;
+  height: 100%;
+  margin: auto;
+  justify-content: space-between;
+  color: rgb(223, 233, 230);
+  font-size: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(223, 233, 230);
+}
+
+#number-of-items {
+  font-size: 0.75rem;
+  margin-bottom: auto;
+  text-align: center;
+  padding: 2px;
+  background-color: rgb(228, 136, 16);
+  border-radius: 20%;
+}

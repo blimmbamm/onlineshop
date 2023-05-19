@@ -1,0 +1,8 @@
+node_modules/
+
+data/categories.csv
+data/import_products_atlas.bat
+data/import_products.bat
+data/products.csv
+
+notes.txt

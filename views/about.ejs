@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head') %>
+
+  <body class="flex-column">
+    <%- include('includes/navbar') %>
+
+    <div class="main-container">
+      <div class="flex-row flex-center mt-1">
+        <div class="flex-column m-gap">
+          <div class="text-center">This page is built with Express.js and MongoDB.</div>
+          <div class="text-center">Selected features:</div>
+          <ul class="">
+            <li>
+              Dynamic displaying of most viewed products on the starting page
+            </li>
+            <li>Signup and login functionality </li>
+            <li>Automatic merging of carts when logging in</li>
+            <li>CSRF protection for non-GET routes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

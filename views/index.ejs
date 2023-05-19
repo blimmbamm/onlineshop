@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head') %>
+
+  <body class="flex-column">
+    <!-- <div style="position: fixed; width: 100%; height: 100%; margin-top: -3rem; z-index: 11"> -->
+      <div
+        class="overlay-container"
+        style="
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 11;
+          background-color: rgb(0, 0, 0, 0.7);
+          visibility: hidden;
+        "
+      >
+        <div
+          style="
+            margin-top: 40vh;
+            background-color: white;
+            padding: 1rem;
+            width: fit-content;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;          
+          "
+        >
+          Loading...
+        </div>
+      </div>
+      <%- include('includes/navbar') %>
+
+    <div class="main-container">
+      <div class="mt-1 text-center">Discover highlights</div>
+
+      <div id="highlights-container" class="mt-1">
+        <% for(product of mostViewedProducts) { %> <%-
+        include('includes/product-highlight-item') %> <% } %>
+      </div>
+    </div>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

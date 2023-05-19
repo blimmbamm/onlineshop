@@ -1,0 +1,7 @@
+<div id="sidebar">
+  <% for(category of categories) {%>
+      <div class="sidebar-item">
+        <a href=<%= "/products/" + category.categoryName %> > <%= category.categoryText %></a>
+      </div>  
+    <% } %>
+</div>

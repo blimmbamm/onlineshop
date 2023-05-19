@@ -1,0 +1,17 @@
+<a class="product-container flex-row" href=<%= "/product/" + product.id %> >
+    <div class="flex-center">
+      <img
+        class="product-img"
+        src=<%= "/images/" + product.imageFile %>
+        alt="Example image"
+      />
+    </div>
+    <div class="product-information-container flex-column">
+      <div class="flex-column s-gap">
+        <div><%= product.brandText %></div>
+        <div class="product-title"><%= product.nameText %></div>
+        <div><%= product.descriptionText %></div>
+      </div>
+      <div class="flex-end"><%= product.price + " EUR" %></div>
+    </div>
+  </a>

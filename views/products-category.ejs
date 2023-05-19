@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head') %>
+  
+  <body class="flex-column">
+    <%- include('includes/navbar') %>
+    
+    <div class="main-container flex-row">
+      <%- include('includes/sidebar', {categories: categories}) %>
+      
+      <div class="products-container flex-column">
+        <div >
+          We found <%= products.length %> products in cateogory <%= products[0].category %>. Potentially put sort options and
+        </div>
+        <div class="products-list-container flex-column m-gap mt-1">
+            <% for(product of products) { %>
+                <%- include('includes/product-item', {product}) %>
+            <% } %>          
+        </div>
+      </div>
+    </div>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

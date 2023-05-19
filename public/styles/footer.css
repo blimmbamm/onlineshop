@@ -1,0 +1,11 @@
+footer {
+  height: 3rem;
+  margin-top: auto;
+  background-color: gray;
+}
+
+#footer {
+  width: 900px;
+  height: 100%;
+  margin: auto;
+}

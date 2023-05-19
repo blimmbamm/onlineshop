@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+      defer
+    ></script> -->
+
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+    <title>Robin's Onlineshop</title>
+  </head>
+  <body class="flex-column">
+    <header>
+      <div id="navbar" class="flex-row">
+        <div class="flex-row">
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/index.html">Home</a>
+          </div>
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/products.html">Products</a>
+          </div>
+        </div>
+
+        <div class="flex-row">
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/login">Login</a>
+          </div>
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/login">Shopping cart</a>
+          </div>
+          <div class="v-auto-margin h-10px-margin">
+            <a href="/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-container flex-column l-gap">
+      <div class="mt-1 text-center">Log in with your credentials:</div>
+      <div class="flex-center w100">
+        <form
+            id="login-form"
+          action="/login"
+          method="POST"
+          class="flex-column m-gap form"          
+        >
+          <label for="email">E-mail:</label>
+          <input type="text" id="email" name="email" />
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" />
+          <div class="flex-center">
+            <button class="w50">Log in</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-1 text-center">
+        Don't have an account yet? <a class="underline-on-hover" href="/signup.html"> Sign up now!</a>
+      </div>
+      
+    </div>
+
+    <footer>
+      <div id="footer" class="flex-row">
+        <div class="v-auto-margin h-10px-margin">
+          Blabla this is the footer.
+        </div>
+        <div class="v-auto-margin h-10px-margin">Some other information</div>
+      </div>
+    </footer>
+  </body>
+</html>

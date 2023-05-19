@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head') %>
+
+  <body class="flex-column">
+    <%- include('includes/navbar') %>
+
+    <div class="main-container flex-column l-gap">
+      <div class="text-center mt-1">Create a new account:</div>
+
+      <div class="flex-center w100">
+        <form
+          id="signup-form"
+          action="/signup"
+          method="POST"
+          class="flex-column m-gap form"
+        >
+          <input
+            type="hidden"
+            id="csrfToken"
+            name="csrfToken"
+            value="<%= locals.csrfToken %>"
+          />
+
+          <label for="firstname">Your first name:</label>
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            value="<%= signupData.firstname %>"
+            required
+          />
+
+          <label for="lastname">Your last name:</label>
+          <input
+            type="text"
+            name="lastname"
+            id="lastname"
+            value="<%= signupData.lastname %>"
+            required
+          />
+
+          <label for="email">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="<%= signupData.email %>"
+            required
+          />
+
+          <label for="confirmemail">Confirm E-mail:</label>
+          <input
+            type="email"
+            id="confirmemail"
+            name="confirmemail"
+            value="<%= signupData.confirmemail %>"
+            required
+          />
+
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" required />
+
+          <label for="confirmpassword">Confirm Password:</label>
+          <input
+            type="password"
+            name="confirmpassword"
+            id="confirmpassword"
+            required
+          />
+
+          <div class="flex-center">
+            <!-- <form action="/signup" method="POST"> -->
+              <button class="button w50">Sign up!</button>
+            <!-- </form> -->
+          </div>
+        </form>
+      </div>
+
+      <% if(signupData.emailsDoNotMatch) { %>
+        <div class="flex-center">
+          <div class="warning-container text-center">
+            Check your data: E-Mails do not match.
+          </div>
+        </div>      
+      <% } %> 
+      
+      <% if(signupData.passwordsDoNotMatch) { %>
+        <div class="flex-center">
+          <div class="warning-container text-center">
+            Check your data: Passwords do not match.
+          </div>
+        </div>      
+      <% } %> 
+      
+      <% if(signupData.userExists) { %>
+        <div class="flex-center">
+          <div class="warning-container text-center">
+            There already exists an user with that email.
+            <a class="underline-on-hover" href="/login">Login</a> instead?
+          </div>
+        </div>      
+      <% } %>
+    </div>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

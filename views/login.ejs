@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head')  %>
+  
+
+  <body class="flex-column">
+    <%- include('includes/navbar') %>
+    
+    <div class="main-container flex-column l-gap">
+      <div class="mt-1 text-center">Log in with your credentials:</div>
+      <div class="flex-center w100">
+        <form
+            id="login-form"
+          action="/login"
+          method="POST"
+          class="flex-column m-gap form"          
+        >
+          <input type="hidden" id="csrfToken" name="csrfToken" value="<%= locals.csrfToken %>">
+          <label for="email">E-mail:</label>
+          <input type="text" id="email" name="email" value="<%= email %>"/>
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" />
+          <div class="flex-center">
+            <button class="button w50">Log in</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-1 text-center">
+        Don't have an account yet? <a class="underline-on-hover" href="/signup"> Sign up now!</a>
+      </div>
+      
+    </div>
+
+    <%- include('includes/footer') %>
+    
+  </body>
+</html>
