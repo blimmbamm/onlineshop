@@ -16,6 +16,7 @@ class User {
       .getDb()
       .collection("users")
       .findOne({ email: this.email });
+      console.log(user);
     return bcrypt.compareSync(enteredPassword, user.password);
   }
 
@@ -44,14 +45,7 @@ class User {
   }
 
   async updateShoppingCart(shoppingCart) {
-    // maybe setShoppingCart() is better
-    // console.log(shoppingCart);
-    // this.shoppingCart = new ShoppingCart(shoppingCart);
-  // console.log(this);
-    // await database.getDb().collection("users").deleteOne({email: this.email});
-
-
-    // what about $unset?
+    
     await database
       .getDb()
       .collection("users")

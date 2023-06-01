@@ -2,7 +2,6 @@ const path = require("path");
 
 const dotenv = require("dotenv");
 dotenv.config();
-console.log(process.env);
 
 const database = require("./data/database");
 

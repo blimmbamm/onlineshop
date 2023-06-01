@@ -11,7 +11,15 @@ const login = async (req, res, next) => {
   const user = new User(req.body.email);
 
   try {
-    if (!user.passwordMatches(req.body.password)) {
+    if(! await user.exists()){
+      return res.redirect("/login");
+    }
+  } catch(error) {
+    return next(error);
+  }
+
+  try {
+    if (! await user.passwordMatches(req.body.password)) {
       return res.redirect("/login"); // redirect to login and show error message OR
     }
   } catch (error) {

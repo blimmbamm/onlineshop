@@ -1,10 +1,17 @@
 
+function addLoadingOverlay(){
+  document.getElementById('loading-overlay').style.display = "block";  
+}
+
+function removeLoadingOverlay(){
+  document.getElementById('loading-overlay').style.display = "none";
+}
 
 async function changeItemQuantity(event){
 
-  // make overlay visible
-  // document.getElementById('loading-overlay').style.visibility = "visible";  
-  document.getElementById('loading-overlay').style.display = "block";  
+  // make overlay visible  
+  addLoadingOverlay();
+  
 
   let response = await fetch("/changequantity", {
     method: "POST",
@@ -19,14 +26,13 @@ async function changeItemQuantity(event){
   });
 
   response = await response.json();
-
-
-  // document.getElementById('loading-overlay').style.visibility = "hidden";
+  
   updateCart(response.shoppingCart);
   updateCsrfToken(response.csrfToken);
   
-  document.getElementById('loading-overlay').style.display = "none";
-  // make overlay invisible
+  // make overlay invisible  
+  removeLoadingOverlay();
+
 }
 
 
@@ -101,6 +107,9 @@ function updateCart(shoppingCart) {
 }
 
 async function removeCartItem(event) {
+
+  addLoadingOverlay();
+
   let response = await fetch("/remove-product", {
     method: "POST",
     body: JSON.stringify({
@@ -118,6 +127,8 @@ async function removeCartItem(event) {
 
   updateCart(response.shoppingCart);
   updateCsrfToken(response.csrfToken);
+
+  removeLoadingOverlay();
   
 }
 
@@ -136,6 +147,9 @@ function updateCsrfToken(csrfToken){
 }
 
 async function addToCart(event) {
+
+addLoadingOverlay();
+
   const response = await fetch("/add-product", {
     method: "POST",
     body: JSON.stringify({
@@ -153,5 +167,7 @@ async function addToCart(event) {
     responseData.numberOfItems;
 
   updateCsrfToken(responseData.csrfToken);
+
+  removeLoadingOverlay();
  
 }
